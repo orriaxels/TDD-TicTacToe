@@ -16,16 +16,16 @@ public class Board {
         }
     }
 
+    //0,3,6 return 0
     //1,4,7 return 1
     //2,5,8 return 2
-    //3,6,9 return 3
     public int getCol(int pos) {
         return pos % 3;
     }
 
-    //1,2,3 return 1
-    //4,5,6 return 2
-    //7,8,9 return 3
+    //0,1,2 return 0
+    //3,4,5 return 1
+    //6,7,8 return 2
     public int getRow(int pos) {
         return pos / 3;
     }
@@ -60,6 +60,19 @@ public class Board {
 				return false;
 
 		return true;
+    }
+
+    public int horizontalWin() {
+        for(int row = 0; row < 3; row++) {
+            if(cells[row][0] != '*' && cells[row][0] == cells[row][1] && cells[row][1] == cells[row][2]) {
+                if(cells[row][0] == 'X')
+                    return 1;
+                else
+                    return 2;
+            }
+        }
+
+        return 0;
     }
 
 

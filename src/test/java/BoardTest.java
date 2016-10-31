@@ -10,12 +10,16 @@ public class BoardTest
 
     @Test //0.0
 	public void testColumn() {
+        assertEquals(0, board.getCol(0));
+        assertEquals(1, board.getCol(7));
 		assertEquals(2, board.getCol(2));
 	}
 
     @Test //0.1
     public void testRow() {
-        assertEquals(3, board.getRow(9));
+        assertEquals(0, board.getRow(0));
+        assertEquals(1, board.getRow(5));
+        assertEquals(2, board.getRow(8));
     }
 
     @Test //1
@@ -55,7 +59,7 @@ public class BoardTest
         board.updateCell(9, '#');
     }
 
-    @Test //4.1
+    @Test //4.2
     public void testUpdateCellDuplicate() {
         board.updateCell(2, '#');
         board.updateCell(2, '#');
@@ -81,5 +85,21 @@ public class BoardTest
     public void testIsDrawFailure() {
         board.updateCell(0, 'X');
         assertEquals(false, board.isDraw());
+    }
+
+    @Test //6.0
+    public void testHorizontalWinX() {
+        board.updateCell(0, 'X');
+        board.updateCell(1, 'X');
+        board.updateCell(2, 'X');
+        assertEquals(1, board.horizontalWin());
+    }
+
+    @Test //6.1
+    public void testHorizontalWinO() {
+        board.updateCell(3, 'O');
+        board.updateCell(4, 'O');
+        board.updateCell(5, 'O');
+        assertEquals(2, board.horizontalWin());
     }
 }
