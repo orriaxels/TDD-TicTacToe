@@ -2,17 +2,19 @@ apply plugin: 'java'
 apply plugin: 'application'
 archivesBaseName = 'TTT'
 
-mainClassName = 'ttt.TicTacToe'
-
+mainClassName = 'ttt.tttWeb'
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
-	compile "org.apache.commons:commons-lang3:3.+"
-    testCompile "junit:junit:4.+"
-    compile 'com.sparkjava:spark-core:2.5'
+	compile files('/slf4j-simple-1.7.21.jar')
+	compile 'org.slf4j:slf4j-api:1.7.5'
+	compile 'com.sparkjava:spark-core:2.5'
+
+
+    testCompile 'junit:junit:4.+'
 }
 
 task stage {
