@@ -46,6 +46,14 @@ public class Board {
         return boardString;
     }
 
+    //Puts the players mark in the cell, if the cell was empty
+    public void updateCell(int pos, char mark) {
+        if(isEmpty(pos))
+            cells[getRow(pos)][getCol(pos)] = mark;
+
+        stingifyBoard();
+    }
+
 
 
     public static void main(String[] args) {
