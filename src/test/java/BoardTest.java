@@ -9,14 +9,20 @@ public class BoardTest
     Board board = new Board();
 
     @Test //0.0
-	public void testColumn()
-	{
+	public void testColumn() {
 		assertEquals(2, board.getCol(2));
 	}
 
     @Test //0.1
-    public void testRow()
-    {
+    public void testRow() {
         assertEquals(3, board.getRow(9));
+    }
+
+    @Test //1
+    public void testInitialization() {
+        for(int row = 0; row < 3; row++) {
+            for(int col = 0; col < 3; col++)
+                board.board[row][col] = '*';
+        }
     }
 }
