@@ -167,7 +167,7 @@ public class Console
 		Console c = new Console();
 
 		c.VisualPrintBoard();
-		c.Play();
+		c.MockPlay();
 		
 	}
     
