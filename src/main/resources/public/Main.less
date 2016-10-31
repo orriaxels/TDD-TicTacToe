@@ -8,17 +8,20 @@ body{
 }
 
 header{
+	width: 100%;
 	height:auto;
-	background-color: #FFF;
+	background-color: #0d142d;
+	color:#FFF;
 	display: flex;
 	flex-direction: row;
+	font-weight: bolder;
 }
 header h1{
 	flex-direction: column;
 	padding-left: 4%;
 	padding-right: 4%;
 	align-self: center;
-	color:#303E73;
+	color:#FFF;
 }
 .Content{
 	padding:4%;
@@ -88,10 +91,21 @@ header h1{
 .bGrid{
 	display: none;
 }
-#GameState{
-	padding:2%;
-	text-align: center;
+footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #0d142d;
 	color:#FFF;
-	font-size: 250%;
+	width: 100%;
+	height: auto;
+	padding-top:2%;
+	padding-bottom: 2%;
 }
-
+footer >*{
+	align-self: center;
+}
+footer h1{
+	line-height: 2px;
+	text-transform: uppercase;
+}
