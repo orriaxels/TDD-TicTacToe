@@ -56,8 +56,7 @@ function isGameOver(param){
 		document.getElementById('GameState').innerHTML = message;
 		$('#GameState').css( "display", "block");
 		$('.GameBoard').css( "opacity", "0.5");
-		$('.newGame').css( "display", "block");
-		$('.newGame').css( "background-color", "rgba(255,255,255,1)");
+		$('.newGame').css( "display", "block");		
 
 	}
 
