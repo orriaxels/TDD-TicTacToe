@@ -79,11 +79,13 @@ public class ConsoleTest
 		assertEquals(true, test3);
 	}
 	
-	@Test(expected = ArrayIndexOutOfBoundsException.class)
+	@Test(expected = ArrayIndexOutOfBoundsException.class) //4.0
 	public void testMOCKreadInput()
 	{
 		Console c = new Console();
 
 		c.MOCKreadInput(11);
 	}
+	
+
 }

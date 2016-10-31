@@ -56,7 +56,7 @@ public class Console
 		PrintLines(SIZE);
 	}
 	
-	public void Play()
+	public void SinglePlayer()
 	{
 		int isOver = b.isOver();
 		while (isOver == 0)
@@ -68,6 +68,44 @@ public class Console
 		}
 
 		Winner(isOver);
+	}
+	
+	public void TwoPlayer()
+	{		
+		int isOver = b.isOver();
+		
+		int game = rand.nextInt(2);
+		
+		while (isOver == 0)
+		{
+			if (game == 0)
+			{
+				System.out.println("Computers Turn" + " (" + b.mark + "):");
+				sleep();
+				MOCKreadInput(ComputerSelectGame());
+				VisualPrintBoard();
+			}
+			else
+			{
+				System.out.println("Your Turn" + " (" + b.mark + "):");
+				readInput();
+				VisualPrintBoard();
+			}
+			isOver = b.isOver();
+			
+			game ^= 1;
+		}
+		Winner(isOver);
+		
+	}
+	
+	public void sleep()
+	{
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void Winner(int mark)
@@ -133,7 +171,7 @@ public class Console
 
 		Console c = new Console();
 		
-		char gameSetting = '-';
+		final char gameSetting = '-';
 
 		//Full automation for Gradle
 		if (gameSetting == '-')
@@ -142,14 +180,19 @@ public class Console
 			c.MockTestPlay();	
 		}
 		
-		//2-player mode
+		//single player mode
 		if (gameSetting == '+')
 		{
 			c.VisualPrintBoard();
-			c.Play();
+			c.SinglePlayer();
 		}
 		
-
+		//2-player mode
+		if (gameSetting == '/')
+		{
+			c.VisualPrintBoard();
+			c.TwoPlayer();
+		}
 	}
     
     //MOCK FUNCTIONS:
@@ -199,12 +242,7 @@ public class Console
 			MOCKreadInput(ComputerSelectGame());
 			VisualPrintBoard();
 			isOver = b.isOver();
-			try {
-				TimeUnit.SECONDS.sleep(1);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			sleep();
 		}
 
 		Winner(isOver);
