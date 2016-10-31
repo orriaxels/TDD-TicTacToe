@@ -4,7 +4,7 @@ import java.util.Random;
 
 
 public class TicTacToe {
-    Board board;
+    public Board board;
 
     TicTacToe() {
         board = new Board();

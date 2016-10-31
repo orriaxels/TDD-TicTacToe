@@ -30,4 +30,9 @@ public class BoardTest
     public void testIsEmpty() {
         assertEquals(true, board.isEmpty(6));
     }
+
+    @Test //2
+    public void testStringify() {
+        assertEquals("*********", board.stingifyBoard());
+    }
 }

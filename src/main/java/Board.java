@@ -35,6 +35,17 @@ public class Board {
         return cells[getRow(pos)][getCol(pos)] == '*';
     }
 
+    public String stingifyBoard() {
+        String boardString = "";
+
+        for(int row = 0; row < 3; row++) {
+            for(int col = 0; col < 3; col++)
+                boardString += String.valueOf(cells[row][col]);
+        }
+
+        return boardString;
+    }
+
 
 
     public static void main(String[] args) {
