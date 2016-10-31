@@ -6,3 +6,5 @@ before_install:
  - chmod +x gradlew
 script:
   - ./gradlew check
+notifications:
+  slack: rusynergy:43gO08tYr7lQJAEIG5fU37AF

@@ -71,7 +71,6 @@ public class Board {
             mark = 'X';
         }
 
-
         stringifyBoard();
     }
 
