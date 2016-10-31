@@ -4,14 +4,14 @@ import java.util.Random;
 
 
 public class TicTacToe {
+    Board board;
 
     TicTacToe() {
-
+        board = new Board();
     }
 
-    public String random() {
-        Random r = new Random();
-        return "#" + r.nextInt(10);
+    public Board getBoard() {
+        return board;
     }
 
 
