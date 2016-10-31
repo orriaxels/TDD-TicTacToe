@@ -1,18 +1,18 @@
 package ttt;
 
 public class Board {
-    public char[][] board;
+    public char[][] cells;
     public int winner = 0;
 
     Board() {
-        board = new char[3][3];
+        cells = new char[3][3];
         initializeBoard();
     }
 
     public void initializeBoard() {
         for(int row = 0; row < 3; row++) {
             for(int col = 0; col < 3; col++)
-                board[row][col] = '*';
+                cells[row][col] = '*';
         }
     }
 
@@ -28,6 +28,11 @@ public class Board {
     //7,8,9 return 3
     public int getRow(int pos) {
         return pos / 3;
+    }
+
+    //Checks if the cell contains
+    public boolean isEmpty(int pos) {
+        return cells[getRow(pos)][getCol(pos)] == '*';
     }
 
 

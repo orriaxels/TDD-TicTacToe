@@ -22,7 +22,12 @@ public class BoardTest
     public void testInitialization() {
         for(int row = 0; row < 3; row++) {
             for(int col = 0; col < 3; col++)
-                board.board[row][col] = '*';
+                assertEquals('*', board.cells[row][col]);
         }
+    }
+
+    @Test //2
+    public void testIsEmpty() {
+        assertEquals(true, board.isEmpty(6));
     }
 }
