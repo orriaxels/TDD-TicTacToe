@@ -13,12 +13,10 @@ dependencies {
 	compile 'org.slf4j:slf4j-api:1.7.5'
 	compile 'com.sparkjava:spark-core:2.5'
 
-
     testCompile 'junit:junit:4.+'
 }
 
-task stage {
-	
+task stage {	
 	doFirst {
 		clean
 	}
