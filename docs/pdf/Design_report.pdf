@@ -1,6 +1,6 @@
 %PDF-1.2
 %‚„œ”
-1 0 obj<</CreationDate(D:20161031200729+00'00')/Producer(txt2pdf v11.0 \251 SANFACE Software)/Title(Administration_manual.md)>>endobj
+1 0 obj<</CreationDate(D:20161031223152+00'00')/Producer(txt2pdf v11.0 \251 SANFACE Software)/Title(Design_report.txt)>>endobj
 2 0 obj<</Type/Encoding/Differences[0 /.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright/parenleft/parenright/asterisk/plus/comma/hyphen/period/slash/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve/dotaccent/dieresis/.notdef/ring/cedilla/.notdef/hungarumlaut/ogonek/caron/space/exclamdown/cent/sterling/currency/yen/brokenbar/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine/guillemotright/onequarter/onehalf/threequarters/questiondown/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]>>endobj
 3 0 obj<</Type/Font/Subtype/Type1/Name/F1/Encoding 2 0 R/BaseFont/Courier>>endobj
 6 0 obj<</Font<</F1 3 0 R>>/ProcSet[/PDF/Text]/XObject<<>>>>endobj
@@ -10,16 +10,22 @@ BT
 /F1 10 Tf
 1 0 0 1 50 752 Tm
 12 TL
-T*(# TicTacToe [![Build Status]\(https://travis-ci.com/OArnarsson/TicTacToe.svg?token=cXTkx6Qw1Hk5t2yqmrmW&branch=master\)]\(https://travis-ci.com/OArnarsson/TicTacToe\))Tj
+T*(# TicTacToe )Tj
 T*()Tj
-T*(### Administration manual)Tj
-T*(If you are using windows command prompt, run the following commands to start the program: If you are using bash or shell insert <code>./   </code> before each command.)Tj
-T*(1. Open up cmd and navigate to where you unzipped Tic Tac Toe repository. eg. <code>cd  C:\\users\\'username'\\Desktop\\TicTacToe</code>)Tj
-T*(2. Execute the command: <code> gradlew build</code>)Tj
-T*(    * <code>gradlew build</code> Gradle runs all test cases and checks if the program is ready to run.)Tj
-T*(3. Execute the command: <code> gradlew run</code>)Tj
-T*(    *<code>gradlew run</code> will run the game. A greeting from the game will appear in the console and awaits you to make your first move against the computer.)Tj
+T*(### Design report)Tj
+T*(The design of the game is aimed to please the lovers of old fashioned console games.)Tj
+T*(In the first stages of the design process we decided to concentrate on the architecture )Tj
+T*(and logic of the game. All functions were made with that in mind that they would be easily )Tj
+T*(testable and consistent. With the use of continuous integration tool called )Tj
+T*([**Travis**]\(https://travis-ci.org/\) we were able to thoroughly test the functions as they )Tj
+T*(were implemented.)Tj
 T*(<br><br>)Tj
+T*()Tj
+T*(#### GUI)Tj
+T*(All function are loosly-coupled in order to create a graphical user interface for the next )Tj
+T*(version of the game. This version of the game is just a console application, but for next )Tj
+T*(version it should be very simple to switch out current interface for more graphical )Tj
+T*(user-friendly interface. )Tj
 T*(This is a demo version of txt2pdf v.11.0)Tj
 T*(Developed by SANFACE Software http://www.sanface.com/)Tj
 T*(Available at http://www.sanface.com/txt2pdf.html)Tj
@@ -28,14 +34,14 @@ ET
 endstream
 endobj
 9 0 obj
-1144
+1105
 endobj
 4 0 obj<</Type/Catalog/Pages 5 0 R>>endobj
 5 0 obj<</Type/Pages/Count 1/MediaBox[0 0 612 792]/Kids[7 0 R ]>>endobj
 xref
 0 10
-0000000000 65535 f 0000000015 00000 n 0000000149 00000 n 0000001986 00000 n 0000003428 00000 n 0000003471 00000 n 0000002068 00000 n 0000002135 00000 n 0000002216 00000 n 0000003408 00000 n trailer
-<</Size 10/Root 4 0 R/Info 1 0 R/ID[<04e8d3924c6825bc5979a7e992341f5a><04e8d3924c6825bc5979a7e992341f5a>]>>
+0000000000 65535 f 0000000015 00000 n 0000000142 00000 n 0000001979 00000 n 0000003382 00000 n 0000003425 00000 n 0000002061 00000 n 0000002128 00000 n 0000002209 00000 n 0000003362 00000 n trailer
+<</Size 10/Root 4 0 R/Info 1 0 R/ID[<464fd3e3725cb20cedd2e4c88332b4c1><464fd3e3725cb20cedd2e4c88332b4c1>]>>
 startxref
-3543
+3497
 %%EOF
