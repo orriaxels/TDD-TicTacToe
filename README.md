@@ -1,5 +1,5 @@
 # TicTacToe [![Build Status](https://travis-ci.com/OArnarsson/TDD-TicTacToe.svg?token=cXTkx6Qw1Hk5t2yqmrmW&branch=master)](https://travis-ci.com/OArnarsson/TDD-TicTacToe)
-Heroku Webapp = (https://synergyttt.herokuapp.com)
+Heroku Webapp = (https://synergyttt.herokuapp.com), http://localhost:4567/ (for Developers)
 ### About the project
 The object of TicTacToe is to get three of your mark('X' or 'O') in a row.  
 You play on a three by three game board. The first player is known as X and the second is O.  
