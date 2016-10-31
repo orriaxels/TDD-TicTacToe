@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class BoardTest
 {
-    Board board = new Board();
+    Board board = new Board(false);
 
     @Test //0.0
 	public void testColumn() {

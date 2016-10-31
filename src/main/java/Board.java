@@ -1,12 +1,16 @@
 package ttt;
 
+import java.util.Random;
+
 public class Board {
     public char[][] cells;
     public Character mark;
+    public boolean vsComp;
 
-    Board() {
+    Board(boolean vsComputer) {
         cells = new char[3][3];
         initializeBoard();
+        vsComp = new Boolean(vsComputer);
         mark = new Character('X');
     }
 
@@ -15,6 +19,16 @@ public class Board {
             for(int col = 0; col < 3; col++)
                 cells[row][col] = '*';
         }
+    }
+
+    //Picks a random, available cell and marks it with 'O'
+    public void randomMove() {
+        Random r = new Random();
+        int randomMove = r.nextInt(8);
+        if(isEmpty(randomMove))
+            updateCell(randomMove);
+        else
+            randomMove();
     }
 
     //0,3,6 return 0
@@ -66,11 +80,16 @@ public class Board {
         if(isEmpty(pos) && isOver() == 0) {
             cells[getRow(pos)][getCol(pos)] = mark;
 
-        if(mark == 'X')
+        if(mark == 'X') {
             mark = 'O';
+
+            if(vsComp == true)
+                 randomMove();
+        }
         else
             mark = 'X';
         }
+
 
         stringifyBoard();
     }

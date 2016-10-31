@@ -6,7 +6,7 @@ import spark.servlet.SparkApplication;
 
 
 public class tttWeb implements SparkApplication {
-    Board board = new Board();
+    Board board = new Board(false);
 
     public static void main(String[] args) {
         staticFileLocation("/public");
@@ -24,7 +24,8 @@ public class tttWeb implements SparkApplication {
     @Override
 	public void init() {
         post("/resetBoard", (req, res) -> {
-            board = new Board();
+            Boolean vsComputer =  Boolean.parseBoolean(req.queryParams("vsCom"));
+            board = new Board(vsComputer);
             return board.stringifyBoard();
         });
 
