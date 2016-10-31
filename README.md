@@ -4,7 +4,8 @@ The object of TicTacToe is to get three of your mark('X' or 'O') in a row.
 You play on a three by three game board. The first player is known as X and the second is O.  
 Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares are filled.  
 
-The project currently runs on the console of your choosing using the <code>./gradlew run</code> command.  
+The project currently runs on the console of your choosing using the <code>./gradlew run</code> command 
+or <code>sh build</code> to get the pdf files.
 The players picks a cell on board, marked 1-9, if the cell is available, it is marked with an 'X'.  
 The AI is programmed to choose a random, available, number on the board and marks it with an 'O'.  
 <br><br>
