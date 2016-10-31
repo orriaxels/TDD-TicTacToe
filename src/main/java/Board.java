@@ -2,10 +2,12 @@ package ttt;
 
 public class Board {
     public char[][] cells;
+    public Character mark;
 
     Board() {
         cells = new char[3][3];
         initializeBoard();
+        mark = new Character('X');
     }
 
     public void initializeBoard() {
@@ -51,9 +53,24 @@ public class Board {
     }
 
     //Puts the players mark in the cell, if the cell was empty
-    public void updateCell(int pos, char mark) {
+    public void MOCKupdateCell(int pos, char mark) {
         if(isEmpty(pos))
             cells[getRow(pos)][getCol(pos)] = mark;
+
+        stringifyBoard();
+    }
+
+    //Puts the players mark in the cell, if the cell was empty
+    public void updateCell(int pos) {
+        if(isEmpty(pos)) {
+            cells[getRow(pos)][getCol(pos)] = mark;
+
+        if(mark == 'X')
+            mark = 'O';
+        else
+            mark = 'X';
+        }
+
 
         stringifyBoard();
     }
@@ -125,8 +142,6 @@ public class Board {
 
         return 0;
     }
-
-
 
     public static void main(String[] args) {
 

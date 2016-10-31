@@ -37,101 +37,125 @@ public class BoardTest
 
     @Test //3
     public void testStringify() {
-        assertEquals("*********", board.stringifyBoard());
+        assertEquals("*********0", board.stringifyBoard());
     }
 
     @Test //4.0
-    public void testUpdateCell() {
-        board.updateCell(0, '0');
-        board.updateCell(1, '1');
-        board.updateCell(2, '2');
-        board.updateCell(3, '3');
-        board.updateCell(4, '4');
-        board.updateCell(5, '5');
-        board.updateCell(6, '6');
-        board.updateCell(7, '7');
-        board.updateCell(8, '8');
-        assertEquals("012345678", board.stringifyBoard());
+    public void testMOCKupdateCell() {
+        board.MOCKupdateCell(0, '0');
+        board.MOCKupdateCell(1, '1');
+        board.MOCKupdateCell(2, '2');
+        board.MOCKupdateCell(3, '3');
+        board.MOCKupdateCell(4, '4');
+        board.MOCKupdateCell(5, '5');
+        board.MOCKupdateCell(6, '6');
+        board.MOCKupdateCell(7, '7');
+        board.MOCKupdateCell(8, '8');
+        assertEquals("0123456783", board.stringifyBoard());
     }
 
     @Test (expected=IndexOutOfBoundsException.class) //4.1
-    public void testUpdateCellFailure() {
-        board.updateCell(9, '#');
+    public void testMOCKupdateCellFailure() {
+        board.MOCKupdateCell(9, '#');
     }
 
     @Test //4.2
-    public void testUpdateCellDuplicate() {
-        board.updateCell(2, '#');
-        board.updateCell(2, '#');
-        board.updateCell(2, '#');
-        assertEquals("**#******", board.stringifyBoard());
+    public void testMOCKupdateCellDuplicate() {
+        board.MOCKupdateCell(2, 'X');
+        board.MOCKupdateCell(2, 'X');
+        board.MOCKupdateCell(2, 'X');
+        assertEquals("**X******0", board.stringifyBoard());
     }
 
     @Test //5.0
     public void testIsDraw() {
-        board.updateCell(0, '0');
-        board.updateCell(1, '1');
-        board.updateCell(2, '2');
-        board.updateCell(3, '3');
-        board.updateCell(4, '4');
-        board.updateCell(5, '5');
-        board.updateCell(6, '6');
-        board.updateCell(7, '7');
-        board.updateCell(8, '8');
+        board.MOCKupdateCell(0, '0');
+        board.MOCKupdateCell(1, '1');
+        board.MOCKupdateCell(2, '2');
+        board.MOCKupdateCell(3, '3');
+        board.MOCKupdateCell(4, '4');
+        board.MOCKupdateCell(5, '5');
+        board.MOCKupdateCell(6, '6');
+        board.MOCKupdateCell(7, '7');
+        board.MOCKupdateCell(8, '8');
         assertEquals(true, board.isDraw());
     }
 
     @Test //5.1
     public void testIsDrawFailure() {
-        board.updateCell(0, 'X');
+        board.MOCKupdateCell(0, 'X');
         assertEquals(false, board.isDraw());
     }
 
     @Test //6.0
     public void testHorizontalWinX() {
-        board.updateCell(0, 'X');
-        board.updateCell(1, 'X');
-        board.updateCell(2, 'X');
+        board.MOCKupdateCell(0, 'X');
+        board.MOCKupdateCell(1, 'X');
+        board.MOCKupdateCell(2, 'X');
         assertEquals(1, board.horizontalWin());
     }
 
     @Test //6.1
     public void testHorizontalWinO() {
-        board.updateCell(3, 'O');
-        board.updateCell(4, 'O');
-        board.updateCell(5, 'O');
+        board.MOCKupdateCell(3, 'O');
+        board.MOCKupdateCell(4, 'O');
+        board.MOCKupdateCell(5, 'O');
         assertEquals(2, board.horizontalWin());
     }
 
     @Test //7.0
     public void testVerticalWinX() {
-        board.updateCell(1, 'X');
-        board.updateCell(4, 'X');
-        board.updateCell(7, 'X');
+        board.MOCKupdateCell(1, 'X');
+        board.MOCKupdateCell(4, 'X');
+        board.MOCKupdateCell(7, 'X');
         assertEquals(1, board.verticalWin());
     }
 
     @Test //7.1
     public void testVerticalWinO() {
-        board.updateCell(2, 'O');
-        board.updateCell(5, 'O');
-        board.updateCell(8, 'O');
+        board.MOCKupdateCell(2, 'O');
+        board.MOCKupdateCell(5, 'O');
+        board.MOCKupdateCell(8, 'O');
         assertEquals(2, board.verticalWin());
     }
 
     @Test //8.0
     public void testCrossX() {
-        board.updateCell(0, 'X');
-        board.updateCell(4, 'X');
-        board.updateCell(8, 'X');
+        board.MOCKupdateCell(0, 'X');
+        board.MOCKupdateCell(4, 'X');
+        board.MOCKupdateCell(8, 'X');
         assertEquals(1, board.crossWin());
     }
 
     @Test //8.1
     public void testCrossO() {
-        board.updateCell(2, 'O');
-        board.updateCell(4, 'O');
-        board.updateCell(6, 'O');
+        board.MOCKupdateCell(2, 'O');
+        board.MOCKupdateCell(4, 'O');
+        board.MOCKupdateCell(6, 'O');
         assertEquals(2, board.crossWin());
+    }
+
+    @Test //9.0
+    public void testIsOverO() {
+        board.MOCKupdateCell(2, 'O');
+        board.MOCKupdateCell(4, 'O');
+        board.MOCKupdateCell(6, 'O');
+        assertEquals(2, board.isOver());
+    }
+
+    @Test //9.1
+    public void testIsOverX() {
+        board.MOCKupdateCell(0, 'X');
+        board.MOCKupdateCell(1, 'X');
+        board.MOCKupdateCell(2, 'X');
+        assertEquals(1, board.isOver());
+    }
+
+    @Test //10
+    public void testRealUpdateCell() {
+        board.updateCell(0);
+        board.updateCell(1);
+        board.updateCell(2);
+        assertEquals("XOX******0", board.stringifyBoard());
     }
 }
