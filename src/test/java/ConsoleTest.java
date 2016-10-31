@@ -34,12 +34,28 @@ public class ConsoleTest
         assertEquals(0, c.GetIsOver());
 	}
 	
-	@Test //1.1
-	public void testprint()
+	@Test //1.0
+	public void testPrint()
 	{
 		Console c = new Console();
 		c.PrintBoard();
 		assertEquals("1 2 3 \n4 5 6 \n7 8 9 \n", outContent.toString());
-  }
+	}
+	
+	@Test //2.0
+	public void testSelectFirstPlayer()
+	{
+		
+		Console c = new Console();
+		char Player = c.SelectFirstPlayer();
+		boolean test = false;
+		if(Player == 'X' || Player == 'O');
+		{
+			test = true;
+		}
+		
+		assertEquals(true, test);
+	}
+	
 
 }

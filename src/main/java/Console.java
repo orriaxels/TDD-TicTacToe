@@ -1,4 +1,6 @@
 package ttt;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Console 
 {
@@ -10,6 +12,7 @@ public class Console
     {
     	b = new Board();
     	IsOver = b.isOver();
+		b.mark = SelectFirstPlayer();
     }
     
 	public void PrintBoard()
@@ -19,21 +22,39 @@ public class Console
 			for (int y = 0; y < SIZE; y++)
 			{
 				int pos = (SIZE * i+y) + 1;
-				char eb = b.cells[i][y];
+				char cell = b.cells[i][y];
 				//System.out.println(pos);
-				if (eb == '*')
+				if (cell == '*')
 				{
 					System.out.print(pos + " ");
 				}
 				else
 				{
-					System.out.print(eb + " ");
+					System.out.print(cell + " ");
 				}
 			}
 			System.out.print("\n");
 		}
 	}
 	
+	public void Play()
+	{
+		System.out.println("Current player is: " + b.mark);
+		
+	}
+
+	
+	public char SelectFirstPlayer()
+    {
+    	Random rand = new Random();
+    	int select = rand.nextInt(2);    	
+    	if (select == 0)
+    	{
+    		return 'X';
+    	}
+    	return 'O';
+    }
+		
     public int GetIsOver()
     {
     	return IsOver;
@@ -43,5 +64,6 @@ public class Console
     {
 		Console c = new Console();
 		c.PrintBoard();
+		c.Play();
 	}
 }
