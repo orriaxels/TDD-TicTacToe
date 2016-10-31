@@ -9,38 +9,17 @@ public class Console
 	private Board b;
 	private int IsOver;
 	private int SIZE = 3;
+	Random rand;
+
 
     public Console()  
     {
+		rand = new Random();
     	b = new Board();
     	IsOver = b.isOver();
 		b.mark = SelectFirstPlayer();
     }
     
-	public void MockPrintBoard()
-	{
-		for (int i = 0; i < SIZE; i++)
-		{
-			for (int y = 0; y < SIZE; y++)
-			{
-				int pos = (SIZE * i+y) + 1;
-				char cell = b.cells[i][y];
-				//System.out.println(pos);
-				if (cell == '*')
-				{
-					System.out.print(pos + " ");
-				}
-				else
-				{
-					System.out.print(cell + " ");
-				}
-			}
-			System.out.print("\n");
-		}
-		System.out.print("\n");
-
-	}
-	
 	public void PrintLines(int size)
 	{
 		char line = '-';
@@ -64,7 +43,6 @@ public class Console
 				
 				if (cell == '*')
 				{
-					
 					System.out.print(pos + " ");
 				}
 				else
@@ -113,6 +91,92 @@ public class Console
 		System.out.println("Congratulations Player " + win + " YOU'RE WINNER!");
 	}
 	
+	public void readInput()
+	{
+		System.out.print("Choose cell: ");
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		int input = scan.nextInt();
+		
+		b.updateCell(input-1);
+	}
+	
+	public char SelectFirstPlayer()
+    {
+    	int select = rand.nextInt(2);    	
+    	if (select == 0)
+    	{
+    		return 'X';
+    	}
+    	return 'O';
+    }
+	
+	//TEST CASE
+    public int GetIsOver()
+    {
+    	return IsOver;
+    }
+    
+    public int ComputerSelectGame()
+    {
+    	int select = rand.nextInt(9);
+		while ( !b.isEmpty(select) ) 
+		{
+			select = rand.nextInt(9);
+		}
+		return select;
+    }
+    
+    public static void main(String[] args) 
+    {
+		printWelcome();
+
+		Console c = new Console();
+		
+		char gameSetting = '-';
+
+		//Full automation for Gradle
+		if (gameSetting == '-')
+		{
+			c.VisualPrintBoard();
+			c.MockTestPlay();	
+		}
+		
+		//2-player mode
+		if (gameSetting == '+')
+		{
+			c.VisualPrintBoard();
+			c.Play();
+		}
+		
+
+	}
+    
+    //MOCK FUNCTIONS:
+    
+	public void MockPrintBoard()
+	{
+		for (int i = 0; i < SIZE; i++)
+		{
+			for (int y = 0; y < SIZE; y++)
+			{
+				int pos = (SIZE * i+y) + 1;
+				char cell = b.cells[i][y];
+				//System.out.println(pos);
+				if (cell == '*')
+				{
+					System.out.print(pos + " ");
+				}
+				else
+				{
+					System.out.print(cell + " ");
+				}
+			}
+			System.out.print("\n");
+		}
+		System.out.print("\n");
+	}
+	
 	public void MockPlay()
 	{
 		MOCKreadInput(1);
@@ -129,18 +193,10 @@ public class Console
 	{
 		int isOver = b.isOver();
 		
-		Random rand = new Random();
-    	
-		int select = 0;
-		while (isOver == 0)
+   		while (isOver == 0)
 		{
-			
-			while ( !b.isEmpty(select) ) 
-			{
-				select = rand.nextInt(9);
-			}
 			System.out.println("Current player is: " + b.mark);
-			MOCKreadInput(select);
+			MOCKreadInput(ComputerSelectGame());
 			VisualPrintBoard();
 			isOver = b.isOver();
 			try {
@@ -152,8 +208,6 @@ public class Console
 		}
 
 		Winner(isOver);
-		
-		
 	}
 	
 	public void MOCKreadInput(int pos)
@@ -166,42 +220,8 @@ public class Console
 		return b.stringifyBoard();
 	}
 	
-	public void readInput()
-	{
-		System.out.print("Choose cell: ");
-		Scanner scan = new Scanner(System.in);
-		int input = scan.nextInt();
-		
-		b.updateCell(input-1);
-	}
-	
-	public char SelectFirstPlayer()
-    {
-    	Random rand = new Random();
-    	int select = rand.nextInt(2);    	
-    	if (select == 0)
-    	{
-    		return 'X';
-    	}
-    	return 'O';
-    }
-	
-	//TEST CASE
-    public int GetIsOver()
-    {
-    	return IsOver;
-    }
     
-    public static void main(String[] args) 
-    {
-		printWelcome();
-
-		Console c = new Console();
-
-		c.VisualPrintBoard();
-		c.MockTestPlay();		
-		
-	}
+    
     
 	//Awesome ascii art checking in.
 	private static void printWelcome() {
