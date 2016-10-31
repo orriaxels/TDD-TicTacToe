@@ -2,7 +2,6 @@ package ttt;
 
 public class Board {
     public char[][] cells;
-    public int winner = 0;
 
     Board() {
         cells = new char[3][3];
@@ -35,7 +34,7 @@ public class Board {
         return cells[getRow(pos)][getCol(pos)] == '*';
     }
 
-    public String stingifyBoard() {
+    public String stringifyBoard() {
         String boardString = "";
 
         for(int row = 0; row < 3; row++) {
@@ -51,7 +50,7 @@ public class Board {
         if(isEmpty(pos))
             cells[getRow(pos)][getCol(pos)] = mark;
 
-        stingifyBoard();
+        stringifyBoard();
     }
 
     public boolean isDraw() {
@@ -71,7 +70,6 @@ public class Board {
                     return 2;
             }
         }
-
         return 0;
     }
 
@@ -84,7 +82,23 @@ public class Board {
                     return 2;
             }
         }
+        return 0;
+    }
 
+    public int crossWin() {
+        if(cells[1][1] != '*' && cells[0][0] == cells[1][1] && cells[1][1] == cells[2][2]) {
+            if(cells[1][1] == 'X')
+                return 1;
+            else
+                return 2;
+        }
+
+        if(cells[1][1] != '*' && cells[0][2] == cells[1][1] && cells[1][1] == cells[2][0]) {
+            if(cells[1][1] == 'X')
+                return 1;
+            else
+                return 2;
+        }
         return 0;
     }
 

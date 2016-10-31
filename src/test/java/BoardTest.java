@@ -37,7 +37,7 @@ public class BoardTest
 
     @Test //3
     public void testStringify() {
-        assertEquals("*********", board.stingifyBoard());
+        assertEquals("*********", board.stringifyBoard());
     }
 
     @Test //4.0
@@ -51,7 +51,7 @@ public class BoardTest
         board.updateCell(6, '6');
         board.updateCell(7, '7');
         board.updateCell(8, '8');
-        assertEquals("012345678", board.stingifyBoard());
+        assertEquals("012345678", board.stringifyBoard());
     }
 
     @Test (expected=IndexOutOfBoundsException.class) //4.1
@@ -64,7 +64,7 @@ public class BoardTest
         board.updateCell(2, '#');
         board.updateCell(2, '#');
         board.updateCell(2, '#');
-        assertEquals("**#******", board.stingifyBoard());
+        assertEquals("**#******", board.stringifyBoard());
     }
 
     @Test //5.0
@@ -117,5 +117,21 @@ public class BoardTest
         board.updateCell(5, 'O');
         board.updateCell(8, 'O');
         assertEquals(2, board.verticalWin());
+    }
+
+    @Test //8.0
+    public void testCrossX() {
+        board.updateCell(0, 'X');
+        board.updateCell(4, 'X');
+        board.updateCell(8, 'X');
+        assertEquals(1, board.crossWin());
+    }
+
+    @Test //8.1
+    public void testCrossO() {
+        board.updateCell(2, 'O');
+        board.updateCell(4, 'O');
+        board.updateCell(6, 'O');
+        assertEquals(2, board.crossWin());
     }
 }
