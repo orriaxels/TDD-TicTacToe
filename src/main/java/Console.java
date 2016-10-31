@@ -35,14 +35,48 @@ public class Console
 			}
 			System.out.print("\n");
 		}
+		System.out.print("\n");
+
 	}
 	
 	public void Play()
 	{
-		System.out.println("Current player is: " + b.mark);
-		
+		while (true)
+		{
+			System.out.println("Current player is: " + b.mark);
+			readInput();
+			PrintBoard();
+		}
 	}
-
+	
+	public void MockPlay()
+	{
+		MOCKreadInput(2);
+		//PrintBoard();
+		MOCKreadInput(4);
+		//PrintBoard();
+		MOCKreadInput(8);
+		//PrintBoard();
+		for (int i = 1; i < 10; i++)
+		{
+			MOCKreadInput(i);
+			
+		}
+		PrintBoard();
+	}
+	
+	public void MOCKreadInput(int pos)
+	{
+		b.updateCell(pos-1);
+	}
+	
+	public void readInput()
+	{
+		Scanner scan = new Scanner(System.in);
+		int input = scan.nextInt();
+		
+		b.updateCell(input-1);
+	}
 	
 	public char SelectFirstPlayer()
     {
@@ -64,6 +98,6 @@ public class Console
     {
 		Console c = new Console();
 		c.PrintBoard();
-		c.Play();
+		c.MockPlay();
 	}
 }

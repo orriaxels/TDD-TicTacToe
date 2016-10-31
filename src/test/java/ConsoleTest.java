@@ -39,7 +39,7 @@ public class ConsoleTest
 	{
 		Console c = new Console();
 		c.PrintBoard();
-		assertEquals("1 2 3 \n4 5 6 \n7 8 9 \n", outContent.toString());
+		assertEquals("1 2 3 \n4 5 6 \n7 8 9 \n\n", outContent.toString());
 	}
 	
 	@Test //2.0
@@ -55,6 +55,16 @@ public class ConsoleTest
 		}
 		
 		assertEquals(true, test);
+	}
+	
+	@Test //3.0
+	public void testMockPlay()
+	{
+		
+		Console c = new Console();
+		c.MockPlay();
+		assertEquals("X O O \nX X O \nX O O \n\n", outContent.toString());
+
 	}
 	
 
