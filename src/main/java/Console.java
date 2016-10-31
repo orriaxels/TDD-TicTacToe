@@ -1,4 +1,5 @@
 package ttt;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -39,6 +40,29 @@ public class Console
 
 	}
 	
+	public void PrintBoard2()
+	{
+		for (int i = 0; i < SIZE; i++)
+		{
+			for (int y = 0; y < SIZE; y++)
+			{
+				int pos = (SIZE * i+y) + 1;
+				char cell = b.cells[i][y];
+				//System.out.println(pos);
+				if (cell == '*')
+				{
+					System.out.print(pos + " ");
+				}
+				else
+				{
+					System.out.print(cell + " ");
+				}
+			}
+			System.out.print("\n");
+		}
+		System.out.print("\n");
+
+	}
 	
 	public void Play()
 	{
@@ -73,6 +97,11 @@ public class Console
 		b.updateCell(pos-1);
 	}
 	
+	public String MockReadBoard()
+	{
+		return b.stringifyBoard();
+	}
+	
 	public void readInput()
 	{
 		System.out.print("Choose cell: ");
@@ -103,8 +132,10 @@ public class Console
 		printWelcome();
 
 		Console c = new Console();
+
 		c.PrintBoard();
-		c.Play();
+		c.MockPlay();
+		
 	}
     
 	//Awesome ascii art checking in.

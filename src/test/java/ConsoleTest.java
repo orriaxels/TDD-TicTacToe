@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.After;
 import java.io.PrintStream;
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConsoleTest
 {
@@ -57,15 +59,24 @@ public class ConsoleTest
 		assertEquals(true, test);
 	}
 	
+	
 	@Test //3.0
 	public void testMockPlay()
 	{
-		
+		List<String> legalPlays = new ArrayList<String>();
+		legalPlays.add("OXXOOXOXX2");
+		legalPlays.add("XOOXXOXOO1");
 		Console c = new Console();
 		c.MockPlay();
-		assertEquals("X O O \nX X O \nX O O \n\n", outContent.toString());
+		String result = c.MockReadBoard();
+		boolean test3 = false;
 
+		if (legalPlays.contains(result))
+		{
+			test3 = true;
+		}
+		
+		assertEquals(true, test3);
 	}
-	
 
 }
