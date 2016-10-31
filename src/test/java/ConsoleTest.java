@@ -88,21 +88,21 @@ public class ConsoleTest
 		assertEquals(true, c.ValidateInput(5));
 	}
 	
-	@Test //4.0
-	public void testComputerSelectGame()
-	{
-		Console c = new Console();
+	// @Test //4.0
+	// public void testComputerSelectGame()
+	// {
+		// Console c = new Console();
 		
-		int cSelect = c.ComputerSelectGame();
+		// int cSelect = c.ComputerSelectGame();
 		
-		boolean test = false;
-		if (cSelect > 0 && cSelect < 9)
-		{
-			test = true;
-		}
+		// boolean test = false;
+		// if (cSelect > 0 && cSelect < 9)
+		// {
+			// test = true;
+		// }
 		
 		
-		assertEquals(true, test);
-	}
+		// assertEquals(true, test);
+	// }
 	
 }
