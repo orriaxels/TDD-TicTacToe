@@ -40,7 +40,7 @@ public class ConsoleTest
 	public void testPrint()
 	{
 		Console c = new Console();
-		c.PrintBoard();
+		c.MockPrintBoard();
 		assertEquals("1 2 3 \n4 5 6 \n7 8 9 \n\n", outContent.toString());
 	}
 	

@@ -16,7 +16,7 @@ public class Console
 		b.mark = SelectFirstPlayer();
     }
     
-	public void PrintBoard()
+	public void MockPrintBoard()
 	{
 		for (int i = 0; i < SIZE; i++)
 		{
@@ -40,17 +40,32 @@ public class Console
 
 	}
 	
-	public void PrintBoard2()
+	public void PrintLines(int size)
+	{
+		char line = '-';
+		for (int i = 0; i <= size*4; i++)
+		{
+			System.out.print(line);
+		}
+		System.out.println();
+	}
+	
+	public void VisualPrintBoard()
 	{
 		for (int i = 0; i < SIZE; i++)
 		{
+			PrintLines(SIZE);
 			for (int y = 0; y < SIZE; y++)
 			{
 				int pos = (SIZE * i+y) + 1;
 				char cell = b.cells[i][y];
 				//System.out.println(pos);
+				
+				System.out.print("| ");
+				
 				if (cell == '*')
 				{
+					
 					System.out.print(pos + " ");
 				}
 				else
@@ -58,9 +73,10 @@ public class Console
 					System.out.print(cell + " ");
 				}
 			}
+			System.out.print("| ");
 			System.out.print("\n");
 		}
-		System.out.print("\n");
+		PrintLines(SIZE);
 
 	}
 	
@@ -70,7 +86,7 @@ public class Console
 		{
 			System.out.println("Current player is: " + b.mark);
 			readInput();
-			PrintBoard();
+			VisualPrintBoard();
 		}
 		
 		System.out.println("TIS OVER");
@@ -89,7 +105,7 @@ public class Console
 			MOCKreadInput(i);
 			
 		}
-		PrintBoard();
+		MockPrintBoard();
 	}
 	
 	public void MOCKreadInput(int pos)
@@ -133,7 +149,7 @@ public class Console
 
 		Console c = new Console();
 
-		c.PrintBoard();
+		c.VisualPrintBoard();
 		c.MockPlay();
 		
 	}
