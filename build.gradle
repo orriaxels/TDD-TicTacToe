@@ -18,6 +18,10 @@ dependencies {
 }
 
 task stage {
-	dependsOn build
+	
+	doFirst {
+		clean
+	}
+	
     dependsOn installDist
 }
