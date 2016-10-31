@@ -2,6 +2,7 @@ package ttt;
 
 public class Board {
     public char[][] board;
+    public int winner = 0;
 
     Board() {
         board = new char[3][3];
