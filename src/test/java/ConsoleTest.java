@@ -28,13 +28,6 @@ public class ConsoleTest
 		System.setOut(null);
 	}
 	
-
-    @Test //0.0
-	public void testIfTestWorks() 
-    {
-		Console c = new Console();
-        assertEquals(0, c.GetIsOver());
-	}
 	
 	@Test //1.0
 	public void testPrint()
@@ -69,22 +62,22 @@ public class ConsoleTest
 		legalPlays.add("OXOXXOXOX3");
 		c.MockPlay();
 		String result = c.MockReadBoard();
-		boolean test3 = false;
+		boolean test = false;
 
 		if (legalPlays.contains(result))
 		{
-			test3 = true;
+			test = true;
 		}
 		
-		assertEquals(true, test3);
+		assertEquals(true, test);
 	}
 	
 	@Test(expected = ArrayIndexOutOfBoundsException.class) //4.0
-	public void testMOCKreadInput()
+	public void testMockreadInput()
 	{
 		Console c = new Console();
 
-		c.MOCKreadInput(11);
+		c.MockReadInput(11);
 	}
 	
 
