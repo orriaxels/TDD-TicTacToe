@@ -22,6 +22,7 @@ function ResetGame(disItem){
 	$(disItem).css( "display", "none" );
 	for(i = 0; i<9; i++){
 		document.getElementById('sp'+i).innerHTML = "";
+		$("#sp"+i).css( "visibility", "hidden");
 	}
 	$('.GameBoard').css( "background-color", "#303E73" );
 	$('.GameBoard').css( "opacity", "1");
@@ -86,6 +87,7 @@ function ServiceCalls(ServiceURL, param){
          url: ServiceURL,
          success: function (data) {
              console.log("Well that went well");
+             console.log(data);
              DrawBoard(data);         
          },
          error: function () {
