@@ -4,6 +4,7 @@ body{
 	margin:0;
 	background-color: #303E73;
 	color:#303E73;
+	font-family: 'Quicksand', sans-serif;
 }
 
 header{
@@ -43,19 +44,23 @@ header h1{
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
-.GameBoard > span{
+.newGame{
 	align-self:center;
+	background-color: #FFF;
 	font-size: 200%;
 	color:#303E73;
 	font-weight: bolder;
 	padding:2%;
 	border:2px solid #303E73;
 	position: absolute;
+	z-index: 2;
 }
-.GameBoard > span:hover{
+.newGame:hover{
 	background-color:#303E73;
 	color:#FFF; 
 	cursor: pointer;
+	font-si200
+	transition: all ease 0.3s;
 }
 .GameBoard >div{
 	width:32.5%;
@@ -79,5 +84,14 @@ header h1{
 	height:32.5%;
 	background-color: rgba(255,255,255, 0.7);
 	cursor: pointer;
+}
+.bGrid{
+	display: none;
+}
+#GameState{
+	padding:2%;
+	text-align: center;
+	color:#FFF;
+	font-size: 250%;
 }
 

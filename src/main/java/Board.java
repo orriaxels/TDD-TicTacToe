@@ -36,6 +36,7 @@ public class Board {
         return cells[getRow(pos)][getCol(pos)] == '*';
     }
 
+    //Prints the board contents out as a string, appends isOver value.
     public String stringifyBoard() {
         String boardString = "";
 
@@ -62,7 +63,7 @@ public class Board {
 
     //Puts the players mark in the cell, if the cell was empty
     public void updateCell(int pos) {
-        if(isEmpty(pos)) {
+        if(isEmpty(pos) && isOver() == 0) {
             cells[getRow(pos)][getCol(pos)] = mark;
 
         if(mark == 'X')
@@ -71,10 +72,10 @@ public class Board {
             mark = 'X';
         }
 
-
         stringifyBoard();
     }
 
+    //Checks if there are no free cells available.
     public boolean isDraw() {
 		for(int pos = 0; pos < 9; pos++)
 			if(isEmpty(pos))
@@ -83,6 +84,7 @@ public class Board {
 		return true;
     }
 
+    //Checks if there is a horizontalWin.
     public int horizontalWin() {
         for(int row = 0; row < 3; row++) {
             if(cells[row][0] != '*' && cells[row][0] == cells[row][1] && cells[row][1] == cells[row][2]) {
@@ -95,6 +97,7 @@ public class Board {
         return 0;
     }
 
+    //Checks if there is a verticalWin.
     public int verticalWin() {
         for(int col = 0; col < 3; col++) {
             if(cells[0][col] != '*' && cells[0][col] == cells[1][col] && cells[1][col] == cells[2][col]) {
@@ -107,6 +110,7 @@ public class Board {
         return 0;
     }
 
+    //Checks if there is a crossWin.
     public int crossWin() {
         if(cells[1][1] != '*' && cells[0][0] == cells[1][1] && cells[1][1] == cells[2][2]) {
             if(cells[1][1] == 'X')
@@ -124,6 +128,7 @@ public class Board {
         return 0;
     }
 
+    //Checks if the game is over.
     public int isOver() {
         int hor = horizontalWin();
         if(hor != 0)
