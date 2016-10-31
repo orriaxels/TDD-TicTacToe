@@ -55,7 +55,36 @@ public class TestTTTWeb extends SeleniumTestWrapper {
         Thread.sleep(600);
         WebElement winner = driver.findElementById("GState");
         assertEquals("Winner is '0'", winner.getText());
-    }      
+    }
+
+    @Test
+    public void checkDraw() throws InterruptedException
+    {
+        driver.get(baseUrl);
+        startGame();
+        Thread.sleep(600);
+        WebElement element0 = findElement("0");
+        Thread.sleep(600);
+        WebElement element1 = findElement("1");
+        Thread.sleep(600);
+        WebElement element2 = findElement("2");
+        Thread.sleep(600);
+        WebElement element4 = findElement("4");
+        Thread.sleep(600);
+        WebElement element8 = findElement("8");
+        Thread.sleep(600);
+        WebElement element6 = findElement("6");
+        Thread.sleep(600);
+        WebElement element3 = findElement("3");
+        Thread.sleep(600);
+        WebElement element5 = findElement("5");
+        Thread.sleep(600);
+        WebElement element7 = findElement("7");
+        Thread.sleep(600);
+
+        WebElement winner = driver.findElementById("GState");
+        assertEquals("Its a Draw", winner.getText());
+    }         
 
     public void startGame()
     {
