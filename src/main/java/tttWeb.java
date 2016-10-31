@@ -21,8 +21,8 @@ public class tttWeb implements SparkApplication {
 
     @Override
     public void init() {
-        final TicTacToe ttt = new TicTacToe();    
-        post("/random", (req, res) -> ttt.random());
+        final TicTacToe TTT = new TicTacToe();
+        post("/random", (req, res) -> TTT.random());
     }
 
 }

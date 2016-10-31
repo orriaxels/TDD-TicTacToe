@@ -6,7 +6,7 @@ import java.util.Random;
 public class TicTacToe {
 
     TicTacToe() {
-        
+
     }
 
     public String random() {
@@ -16,6 +16,6 @@ public class TicTacToe {
 
 
     public static void main(String[] args) {
-        TicTacToe ttt = new TicTacToe();
+        System.out.println("GRADLE IS WORKING!");
     }
 }
