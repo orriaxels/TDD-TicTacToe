@@ -54,6 +54,14 @@ public class Board {
         stingifyBoard();
     }
 
+    public boolean isDraw() {
+		for(int pos = 0; pos < 9; pos++)
+			if(isEmpty(pos))
+				return false;
+
+		return true;
+    }
+
 
 
     public static void main(String[] args) {

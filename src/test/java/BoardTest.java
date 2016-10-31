@@ -62,4 +62,24 @@ public class BoardTest
         board.updateCell(2, '#');
         assertEquals("**#******", board.stingifyBoard());
     }
+
+    @Test //5.0
+    public void testIsDraw() {
+        board.updateCell(0, '0');
+        board.updateCell(1, '1');
+        board.updateCell(2, '2');
+        board.updateCell(3, '3');
+        board.updateCell(4, '4');
+        board.updateCell(5, '5');
+        board.updateCell(6, '6');
+        board.updateCell(7, '7');
+        board.updateCell(8, '8');
+        assertEquals(true, board.isDraw());
+    }
+
+    @Test //5.1
+    public void testIsDrawFailure() {
+        board.updateCell(0, 'X');
+        assertEquals(false, board.isDraw());
+    }
 }
