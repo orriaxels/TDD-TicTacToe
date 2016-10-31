@@ -20,7 +20,7 @@ $(function() {
 
 function ResetGame(disItem){
 	$(disItem).css( "display", "none" );
-	for(i = 1; i<9; i++){
+	for(i = 0; i<9; i++){
 		document.getElementById('sp'+i).innerHTML = "";
 	}
 	$('.GameBoard').css( "background-color", "#303E73" );
