@@ -58,9 +58,7 @@ public class Console
 			for (int y = 0; y < SIZE; y++)
 			{
 				int pos = (SIZE * i+y) + 1;
-				char cell = b.cells[i][y];
-				//System.out.println(pos);
-				
+				char cell = b.cells[i][y];				
 				System.out.print("| ");
 				
 				if (cell == '*')
@@ -77,33 +75,51 @@ public class Console
 			System.out.print("\n");
 		}
 		PrintLines(SIZE);
-
 	}
 	
 	public void Play()
 	{
-		while (b.isOver() == 0)
+		int isOver = b.isOver();
+		while (isOver == 0)
 		{
 			System.out.println("Current player is: " + b.mark);
 			readInput();
 			VisualPrintBoard();
+			isOver = b.isOver();
+		}
+
+		Winner(isOver);
+	}
+	
+	public void Winner(int mark)
+	{
+		printGameOver();
+
+		char win;
+		if (mark == 1)
+		{
+			win = 'X';
+		}
+		else if (mark == 2)
+		{
+			win = 'O';
+		}
+		else
+		{
+			return;
 		}
 		
-		System.out.println("TIS OVER");
+		System.out.println("Congratulations Player " + win + " YOU'RE WINNER!");
 	}
 	
 	public void MockPlay()
 	{
 		MOCKreadInput(2);
-		//PrintBoard();
 		MOCKreadInput(4);
-		//PrintBoard();
 		MOCKreadInput(8);
-		//PrintBoard();
 		for (int i = 1; i < 10; i++)
 		{
 			MOCKreadInput(i);
-			
 		}
 		MockPrintBoard();
 	}
@@ -137,7 +153,8 @@ public class Console
     	}
     	return 'O';
     }
-		
+	
+	//TEST CASE
     public int GetIsOver()
     {
     	return IsOver;
@@ -150,7 +167,7 @@ public class Console
 		Console c = new Console();
 
 		c.VisualPrintBoard();
-		c.MockPlay();
+		c.Play();
 		
 	}
     
