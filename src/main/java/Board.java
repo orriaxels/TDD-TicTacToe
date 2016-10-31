@@ -42,6 +42,11 @@ public class Board {
                 boardString += String.valueOf(cells[row][col]);
         }
 
+        if(boardString.length() != 9)
+            boardString = boardString.substring(0, 9);
+
+        boardString += isOver();
+
         return boardString;
     }
 
@@ -99,6 +104,25 @@ public class Board {
             else
                 return 2;
         }
+        return 0;
+    }
+
+    public int isOver() {
+        int hor = horizontalWin();
+        if(hor != 0)
+            return hor;
+
+        int ver = verticalWin();
+        if(ver!= 0)
+            return ver;
+
+        int cross = crossWin();
+        if(cross != 0)
+            return cross;
+
+        if(isDraw())
+            return 3;
+
         return 0;
     }
 
