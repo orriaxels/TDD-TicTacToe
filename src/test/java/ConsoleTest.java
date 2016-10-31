@@ -72,13 +72,37 @@ public class ConsoleTest
 		assertEquals(true, test);
 	}
 	
-	@Test(expected = ArrayIndexOutOfBoundsException.class) //4.0
-	public void testMockreadInput()
+	@Test //4.0
+	public void testValidateInput()
 	{
 		Console c = new Console();
 
-		c.MockReadInput(11);
+		assertEquals(false, c.ValidateInput(11));
 	}
 	
+	@Test //4.1
+	public void testBadValidateInput()
+	{
+		Console c = new Console();
 
+		assertEquals(true, c.ValidateInput(5));
+	}
+	
+	@Test //4.0
+	public void testComputerSelectGame()
+	{
+		Console c = new Console();
+		
+		int cSelect = c.ComputerSelectGame();
+		
+		boolean test = false;
+		if (cSelect > 0 && cSelect < 9)
+		{
+			test = true;
+		}
+		
+		
+		assertEquals(true, test);
+	}
+	
 }
