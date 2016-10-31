@@ -1,15 +1,19 @@
 package ttt;
+import java.util.Random;
 
 public class Board {
     public char[][] cells;
     public Character mark;
+    public boolean vsComp;
 
+    //Constructs the board, either vs AI or 2 player
     Board() {
         cells = new char[3][3];
         initializeBoard();
         mark = new Character('X');
     }
 
+    //Sets all cells as *, available for marking
     public void initializeBoard() {
         for(int row = 0; row < 3; row++) {
             for(int col = 0; col < 3; col++)
@@ -71,6 +75,7 @@ public class Board {
         else
             mark = 'X';
         }
+
 
         stringifyBoard();
     }

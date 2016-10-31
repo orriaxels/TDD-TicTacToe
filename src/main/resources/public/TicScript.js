@@ -20,6 +20,7 @@ $(function() {
 
 function ResetGame(disItem){
 	$(disItem).css( "display", "none" );
+	document.getElementById('GState').innerHTML = "Tic Tac Toe";
 	for(i = 0; i<9; i++){
 		document.getElementById('sp'+i).innerHTML = "";
 		$("#sp"+i).css( "visibility", "hidden");
@@ -54,8 +55,7 @@ function isGameOver(param){
 	}
 
 	if(isOver){
-		document.getElementById('GameState').innerHTML = message;
-		$('#GameState').css( "display", "block");
+		document.getElementById('GState').innerHTML = message;
 		$('.GameBoard').css( "opacity", "0.5");
 		$('.newGame').css( "display", "block");		
 
