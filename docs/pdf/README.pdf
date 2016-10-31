@@ -1,0 +1,120 @@
+%PDF-1.2
+%‚„œ”
+1 0 obj<</CreationDate(D:20161031213020+00'00')/Producer(txt2pdf v11.0 \251 SANFACE Software)/Title(README.txt)>>endobj
+2 0 obj<</Type/Encoding/Differences[0 /.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright/parenleft/parenright/asterisk/plus/comma/hyphen/period/slash/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve/dotaccent/dieresis/.notdef/ring/cedilla/.notdef/hungarumlaut/ogonek/caron/space/exclamdown/cent/sterling/currency/yen/brokenbar/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine/guillemotright/onequarter/onehalf/threequarters/questiondown/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]>>endobj
+3 0 obj<</Type/Font/Subtype/Type1/Name/F1/Encoding 2 0 R/BaseFont/Courier>>endobj
+6 0 obj<</Font<</F1 3 0 R>>/ProcSet[/PDF/Text]/XObject<<>>>>endobj
+7 0 obj<</Type/Page/Parent 5 0 R/Resources 6 0 R/Contents 8 0 R/Rotate 0>>endobj
+8 0 obj<</Length 9 0 R>>stream
+BT
+/F1 10 Tf
+1 0 0 1 50 752 Tm
+12 TL
+T*(# TicTacToe )Tj
+T*(https://synergyttt.herokuapp.com/)Tj
+T*()Tj
+T*(### About the project)Tj
+T*(The object of TicTacToe is to get three of your mark\('X' or 'O'\) in a row.  )Tj
+T*(You play on a three by three game board. The first player is known as X and the second is O.  )Tj
+T*(Players alternate placing Xs and Os on the game board until either oppent has three in a )Tj
+T*(row or all nine squares are filled.  )Tj
+T*()Tj
+T*(The project currently runs on the console of your choosing using the )Tj
+T*(<code>./gradlew run</code> command.  )Tj
+T*(The players picks a cell on board, marked 1-9, if the cell is available, it is marked with )Tj
+T*(an 'X'.  )Tj
+T*(The AI is programmed to choose a random, available, number on the board and marks it with )Tj
+T*(an 'O'.  )Tj
+T*(<br><br>)Tj
+T*()Tj
+T*(### Development manual)Tj
+T*(You can download the game from [**our repository**]\(https://github.com/OArnarsson/TicTacToe\) )Tj
+T*(or fork it to you own, after downloading, unzip the game to a folder of your choosing. )Tj
+T*(In order to run the application it¥s required to have **Java jdk 1.8** or greater. )Tj
+T*(If you do not have **java 1.8** or greater installed you will need to download and install )Tj
+T*(it to you computer. Java can be downloaded from the [**Oracle website**])Tj
+T*(\(http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html\). )Tj
+T*(The game comes packed with a Gradle wrapper\(gradlew 3.1\) to set up the game follow the )Tj
+T*(administration direction here below.)Tj
+T*(<br><br>)Tj
+T*()Tj
+T*(### Administration manual)Tj
+T*(If you are using windows command prompt, run the following commands to start the program: )Tj
+T*(If you are using bash or shell insert <code>./   </code> before each command.)Tj
+T*(1. Open up cmd and navigate to where you unzipped Tic Tac Toe repository. eg. )Tj
+T*(<code>cd  C:\\users\\'username'\\Desktop\\TicTacToe</code>)Tj
+T*(2. Execute the command: <code> gradlew build</code>)Tj
+T*(    * <code>gradlew build</code> Gradle runs all test cases and checks if the program is )Tj
+T*(ready to run.)Tj
+T*(3. Execute the command: <code> gradlew run</code>)Tj
+T*(    *<code>gradlew run</code> will run the game. A greeting from the game will appear in )Tj
+T*(the console and awaits you to make your first move against the computer.)Tj
+T*(<br><br>)Tj
+T*()Tj
+T*(### Useful gradle commands)Tj
+T*(This project comes packed with a Gradle wrapper \(gradlew 3.1\), so there is no need for )Tj
+T*(local gradle setup.)Tj
+T*(Simply run these simple commands in the project root directory <code>~/TicTacToe</code>)Tj
+T*(~~~~)Tj
+T*(./gradlew assemble - Assembles the outputs of the project.)Tj
+T*(*./gradlew build" - Builds the project and runs test in /src/test folder.)Tj
+T*(./bin/build_test - For cmd/powershell users. - Runs the application and displays output )Tj
+T*(in shell.)Tj
+T*(./gradlew tasks - Displays list of tasks.)Tj
+T*(gradlew assemble - For cmd/powershell users.)Tj
+T*(*gradlew build - For cmd/powershell users.)Tj
+T*(bin/build_test - For cmd/powershell users.)Tj
+T*(gradlew tasks - For cmd/powershell users.)Tj
+T*(~~~~)Tj
+T*(<br><br>)Tj
+T*()Tj
+T*(### Design report)Tj
+T*(The design of the game is aimed to please the lovers of old fashioned console games.)Tj
+ET
+endstream
+endobj
+9 0 obj
+3284
+endobj
+10 0 obj<</Type/Page/Parent 5 0 R/Resources 6 0 R/Contents 11 0 R/Rotate 0>>endobj
+11 0 obj<</Length 12 0 R>>stream
+BT
+/F1 10 Tf
+1 0 0 1 50 752 Tm
+12 TL
+T*(In the first stages of the design process we decided to concentrate on the architecture )Tj
+T*(and logic of the game. All functions were made with that in mind that they would be easily )Tj
+T*(testable and consistent. With the use of continuous integration tool called [**Travis**])Tj
+T*(\(https://travis-ci.org/\) we were able to thoroughly test the functions as they were )Tj
+T*(implemented.)Tj
+T*(<br><br>)Tj
+T*()Tj
+T*(### Team members)Tj
+T*(- Andri Andresson )Tj
+T*(- Orri Arnarsson)Tj
+T*(- Orri Axelsson)Tj
+T*(- Thorarinn Gunnar Arnason)Tj
+T*(- Sverrir Vilhjalmur Hermannsson)Tj
+T*(- Jon H Julusson)Tj
+T*(- Bardi Freyr Thorsteinsson)Tj
+T*()Tj
+T*()Tj
+T*(This is a demo version of txt2pdf v.11.0)Tj
+T*(Developed by SANFACE Software http://www.sanface.com/)Tj
+T*(Available at http://www.sanface.com/txt2pdf.html)Tj
+T*()Tj
+ET
+endstream
+endobj
+12 0 obj
+867
+endobj
+4 0 obj<</Type/Catalog/Pages 5 0 R>>endobj
+5 0 obj<</Type/Pages/Count 2/MediaBox[0 0 612 792]/Kids[7 0 R 10 0 R ]>>endobj
+xref
+0 13
+0000000000 65535 f 0000000015 00000 n 0000000135 00000 n 0000001972 00000 n 0000006574 00000 n 0000006617 00000 n 0000002054 00000 n 0000002121 00000 n 0000002202 00000 n 0000005534 00000 n 0000005554 00000 n 0000005637 00000 n 0000006554 00000 n trailer
+<</Size 13/Root 4 0 R/Info 1 0 R/ID[<b3fa81662e16c98b62633d73f161827c><b3fa81662e16c98b62633d73f161827c>]>>
+startxref
+6696
+%%EOF

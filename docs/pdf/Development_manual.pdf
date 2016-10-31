@@ -1,0 +1,52 @@
+%PDF-1.2
+%‚„œ”
+1 0 obj<</CreationDate(D:20161031213020+00'00')/Producer(txt2pdf v11.0 \251 SANFACE Software)/Title(Development_manual.txt)>>endobj
+2 0 obj<</Type/Encoding/Differences[0 /.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright/parenleft/parenright/asterisk/plus/comma/hyphen/period/slash/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve/dotaccent/dieresis/.notdef/ring/cedilla/.notdef/hungarumlaut/ogonek/caron/space/exclamdown/cent/sterling/currency/yen/brokenbar/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine/guillemotright/onequarter/onehalf/threequarters/questiondown/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]>>endobj
+3 0 obj<</Type/Font/Subtype/Type1/Name/F1/Encoding 2 0 R/BaseFont/Courier>>endobj
+6 0 obj<</Font<</F1 3 0 R>>/ProcSet[/PDF/Text]/XObject<<>>>>endobj
+7 0 obj<</Type/Page/Parent 5 0 R/Resources 6 0 R/Contents 8 0 R/Rotate 0>>endobj
+8 0 obj<</Length 9 0 R>>stream
+BT
+/F1 10 Tf
+1 0 0 1 50 752 Tm
+12 TL
+T*(# TicTacToe )Tj
+T*()Tj
+T*(### Development manual)Tj
+T*(You can download the game from [**our repository**]\(https://github.com/OArnarsson/TicTacToe\) )Tj
+T*(or fork it to you own, after downloading, unzip the game to a folder of your choosing. )Tj
+T*(In order to run the application it¬¥s required to have **Java jdk 1.8** or greater. )Tj
+T*(If you do not have **java 1.8** or greater installed you will need to download and install )Tj
+T*(it to you computer. Java can be downloaded from the  [**Oracle website** )Tj
+T*(\(http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html\). )Tj
+T*(The game comes packed with a Gradle wrapper\(gradlew v3.1\) so there is no need for )Tj
+T*(installing Gradle.)Tj
+T*(Instrutction on how to us gradle can be found on [**Gradle official  website.**])Tj
+T*(\(https://gradle.org/getting-started-gradle/#toggle-id-1\))Tj
+T*(<br><br>)Tj
+T*()Tj
+T*(When  <script> gradlew build </script> command is executed, a '.html' report is genereated, )Tj
+T*(it can be accessed in this location:)Tj
+T*(<script> ~/TicTacToe/build/reports/tests/test/index.html </script>. )Tj
+T*(This file gives clearer information about the 'current' build status.)Tj
+T*()Tj
+T*()Tj
+T*(This is a demo version of txt2pdf v.11.0)Tj
+T*(Developed by SANFACE Software http://www.sanface.com/)Tj
+T*(Available at http://www.sanface.com/txt2pdf.html)Tj
+T*()Tj
+ET
+endstream
+endobj
+9 0 obj
+1422
+endobj
+4 0 obj<</Type/Catalog/Pages 5 0 R>>endobj
+5 0 obj<</Type/Pages/Count 1/MediaBox[0 0 612 792]/Kids[7 0 R ]>>endobj
+xref
+0 10
+0000000000 65535 f 0000000015 00000 n 0000000147 00000 n 0000001984 00000 n 0000003704 00000 n 0000003747 00000 n 0000002066 00000 n 0000002133 00000 n 0000002214 00000 n 0000003684 00000 n trailer
+<</Size 10/Root 4 0 R/Info 1 0 R/ID[<b9af9db0f81e058aa899a9df6737b05a><b9af9db0f81e058aa899a9df6737b05a>]>>
+startxref
+3819
+%%EOF
