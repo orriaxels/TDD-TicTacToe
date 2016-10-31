@@ -39,7 +39,7 @@ public class ConsoleTest
 	{
 		Console c = new Console();
 		c.PrintBoard();
-		assertEquals("123\n456\n789\n", outContent.toString());
+		assertEquals("1 2 3 \n4 5 6 \n7 8 9 \n", outContent.toString());
   }
 
 }

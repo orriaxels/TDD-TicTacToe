@@ -23,11 +23,11 @@ public class Console
 				//System.out.println(pos);
 				if (eb == '*')
 				{
-					System.out.print(pos);
+					System.out.print(pos + " ");
 				}
 				else
 				{
-					System.out.print(eb);
+					System.out.print(eb + " ");
 				}
 			}
 			System.out.print("\n");
