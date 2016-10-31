@@ -24,9 +24,10 @@ public class tttWeb implements SparkApplication {
     @Override
 	public void init() {
         post("/resetBoard", (req, res) -> {
-            board.initializeBoard();
+            board = new Board();
             return board.stringifyBoard();
         });
+
         post("/updateCell", (req, res) -> {
             Integer cellId = Integer.parseInt(req.queryParams("cellId"));
             board.updateCell(cellId);
