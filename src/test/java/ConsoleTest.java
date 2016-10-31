@@ -73,7 +73,7 @@ public class ConsoleTest
 	}
 	
 	@Test //4.0
-	public void testValidateInput()
+	public void testBadValidateInput()
 	{
 		Console c = new Console();
 
@@ -81,7 +81,7 @@ public class ConsoleTest
 	}
 	
 	@Test //4.1
-	public void testBadValidateInput()
+	public void testValidateInput()
 	{
 		Console c = new Console();
 
