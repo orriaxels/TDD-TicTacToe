@@ -45,7 +45,10 @@ public class Console
 	{
 		if (input >= 0 && input < SIZE*3)
 		{
-			return true;
+			if (b.isEmpty(input))
+			{
+				return true;
+			}
 		}
 		return false;
 	}
@@ -58,10 +61,12 @@ public class Console
 		Scanner scan = new Scanner(System.in);
 		int input = scan.nextInt();
 		
-		if (ValidateInput(input))
+		if (ValidateInput(input-1))
 		{
 			b.updateCell(input-1);
+			return;
 		}
+		ReadInput();
 	}
 	
 	//SETS INPUT FROM PARAMETER
@@ -100,8 +105,8 @@ public class Console
 		PrintLines(SIZE);
 	}
 	
-	//SINGLE PLAYER GAME
-	public void SinglePlayer()
+	//TWO PLAYER GAME
+	public void TwoPlayer()
 	{
 		isOver = b.isOver();
 		while (isOver == 0)
@@ -127,7 +132,7 @@ public class Console
     }
 	
 	//COMPUTER PLAYER AND HUMAN PLAYER
-	public void TwoPlayer()
+	public void SinglePlayer()
 	{		
 		int isOver = b.isOver();
 		
@@ -189,35 +194,35 @@ public class Console
     }
    
     
-    public static void main(String[] args) 
-    {
-		PrintWelcome();
+	  public static void main(String[] args) 
+	    {
+			PrintWelcome();
 
-		Console c = new Console();
-		
-		char gameSetting = '-';
+			Console c = new Console();
+			
+			char gameSetting = '-';
 
-		//Full automation for Gradle
-		if (gameSetting == '-')
-		{
-			c.VisualPrintBoard();
-			c.MockTestPlay();	
+			//Full automation for Gradle
+			if (gameSetting == '-')
+			{
+				c.VisualPrintBoard();
+				c.MockTestPlay();	
+			}
+			
+			//single player mode
+			if (gameSetting == '+')
+			{
+				c.VisualPrintBoard();
+				c.SinglePlayer();
+			}
+			
+			//2-player mode
+			if (gameSetting == '/')
+			{
+				c.VisualPrintBoard();
+				c.TwoPlayer();
+			}
 		}
-		
-		//single player mode
-		if (gameSetting == '+')
-		{
-			c.VisualPrintBoard();
-			c.SinglePlayer();
-		}
-		
-		//2-player mode
-		if (gameSetting == '/')
-		{
-			c.VisualPrintBoard();
-			c.TwoPlayer();
-		}
-	}
     
     //MOCK FUNCTIONS:
 	public void MockPrintBoard()
