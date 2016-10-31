@@ -20,37 +20,42 @@ public class TestTTTWeb extends SeleniumTestWrapper {
     {
         driver.get(baseUrl);
         startGame();
-        Thread.sleep(1000);
-
+        Thread.sleep(600);
         WebElement element0 = findElement("0");
-        Thread.sleep(1000);
+        Thread.sleep(600);
         WebElement element1 = findElement("1");
-        Thread.sleep(1000);
+        Thread.sleep(600);
         WebElement element3 = findElement("3");
-        Thread.sleep(1000);
+        Thread.sleep(600);
         WebElement element2 = findElement("2");
-        Thread.sleep(1000);
+        Thread.sleep(600);
         WebElement element6 = findElement("6");
-        Thread.sleep(2000);
+        Thread.sleep(600);
         WebElement winner = driver.findElementById("GState");
-        // assertEquals("X", element0.getText());
-        // assertEquals("X", element3.getText());
-        // assertEquals("X", element6.getText());
         assertEquals("Winner is 'X'", winner.getText());
     }
 
-/*    @Test
-    public void assertUpdatingNameChangesSpecificJoke() {
-        driver.get(baseUrl + "/config.html");
-        
-        1. Fill in some name (first name, last name)
-        2. Submit form.
-        3. Assert that form notifies of success ("Name set as: ...")
-        4. Navigate to page to get specific Joke
-        5. Enter a specific joke number
-        6. Assert the name is used in the joke.
-  
-    }      */
+    @Test
+    public void checkWinnerO() throws InterruptedException
+    {
+        driver.get(baseUrl);
+        startGame();
+        Thread.sleep(600);
+        WebElement element0 = findElement("0");
+        Thread.sleep(600);
+        WebElement element1 = findElement("1");
+        Thread.sleep(600);
+        WebElement element2 = findElement("2");
+        Thread.sleep(600);
+        WebElement element4 = findElement("4");
+        Thread.sleep(600);
+        WebElement element8 = findElement("8");
+        Thread.sleep(600);
+        WebElement element7 = findElement("7");
+        Thread.sleep(600);
+        WebElement winner = driver.findElementById("GState");
+        assertEquals("Winner is '0'", winner.getText());
+    }      
 
     public void startGame()
     {
