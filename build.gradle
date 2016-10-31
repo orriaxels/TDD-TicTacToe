@@ -8,18 +8,34 @@ repositories {
     jcenter()
 }
 
-dependencies {
-	compile files('/slf4j-simple-1.7.21.jar')
-	compile 'org.slf4j:slf4j-api:1.7.5'
-	compile 'com.sparkjava:spark-core:2.5'
-
-    testCompile 'junit:junit:4.+'
+sourceSets {
+        selenium
 }
 
-task stage {	
-	doFirst {
-		clean
-	}
-	
+
+dependencies {
+        compile files('/slf4j-simple-1.7.21.jar')
+        compile 'org.slf4j:slf4j-api:1.7.5'
+        compile 'com.sparkjava:spark-core:2.5'
+
+
+    testCompile 'junit:junit:4.+'
+
+    seleniumCompile 'junit:junit:4.11'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'  
+}
+
+task stage {
+
+        doFirst {
+                clean
+        }
+
     dependsOn installDist
+}
+
+task selenium(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
 }
