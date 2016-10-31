@@ -47,7 +47,6 @@ public class ConsoleTest
 	@Test //2.0
 	public void testSelectFirstPlayer()
 	{
-		
 		Console c = new Console();
 		char Player = c.SelectFirstPlayer();
 		boolean test = false;
@@ -63,10 +62,11 @@ public class ConsoleTest
 	@Test //3.0
 	public void testMockPlay()
 	{
-		List<String> legalPlays = new ArrayList<String>();
-		legalPlays.add("OXXOOXOXX2");
-		legalPlays.add("XOOXXOXOO1");
 		Console c = new Console();
+
+		List<String> legalPlays = new ArrayList<String>();
+		legalPlays.add("XOXOOXOXO3");
+		legalPlays.add("OXOXXOXOX3");
 		c.MockPlay();
 		String result = c.MockReadBoard();
 		boolean test3 = false;
@@ -78,5 +78,12 @@ public class ConsoleTest
 		
 		assertEquals(true, test3);
 	}
+	
+	@Test(expected = ArrayIndexOutOfBoundsException.class)
+	public void testMOCKreadInput()
+	{
+		Console c = new Console();
 
+		c.MOCKreadInput(11);
+	}
 }

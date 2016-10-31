@@ -2,6 +2,7 @@ package ttt;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Console 
 {
@@ -114,19 +115,50 @@ public class Console
 	
 	public void MockPlay()
 	{
+		MOCKreadInput(1);
 		MOCKreadInput(2);
-		MOCKreadInput(4);
-		MOCKreadInput(8);
-		for (int i = 1; i < 10; i++)
+		MOCKreadInput(3);
+		for (int i = 0; i < 9; i++)
 		{
 			MOCKreadInput(i);
 		}
 		MockPrintBoard();
 	}
 	
+	public void MockTestPlay()
+	{
+		int isOver = b.isOver();
+		
+		Random rand = new Random();
+    	
+		int select = 0;
+		while (isOver == 0)
+		{
+			
+			while ( !b.isEmpty(select) ) 
+			{
+				select = rand.nextInt(9);
+			}
+			System.out.println("Current player is: " + b.mark);
+			MOCKreadInput(select);
+			VisualPrintBoard();
+			isOver = b.isOver();
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		Winner(isOver);
+		
+		
+	}
+	
 	public void MOCKreadInput(int pos)
 	{
-		b.updateCell(pos-1);
+		b.updateCell(pos);
 	}
 	
 	public String MockReadBoard()
@@ -167,7 +199,7 @@ public class Console
 		Console c = new Console();
 
 		c.VisualPrintBoard();
-		c.MockPlay();
+		c.MockTestPlay();		
 		
 	}
     
