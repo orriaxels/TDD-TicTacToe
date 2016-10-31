@@ -62,7 +62,7 @@ public class Board {
 
     //Puts the players mark in the cell, if the cell was empty
     public void updateCell(int pos) {
-        if(isEmpty(pos)) {
+        if(isEmpty(pos) && isOver() == 0) {
             cells[getRow(pos)][getCol(pos)] = mark;
 
         if(mark == 'X')
