@@ -7,19 +7,19 @@ import java.util.concurrent.TimeUnit;
 public class Console 
 {
 	private Board b;
-	private int IsOver;
+	private int isOver;
 	private int SIZE = 3;
 	Random rand;
-
-
+	
     public Console()  
     {
 		rand = new Random();
     	b = new Board();
-    	IsOver = b.isOver();
+    	isOver = b.isOver();
 		b.mark = SelectFirstPlayer();
     }
     
+	//PRINTS A STRAIGHT LINE FOR CONSOLE PRINT
 	public void PrintLines(int size)
 	{
 		char line = '-';
@@ -30,6 +30,55 @@ public class Console
 		System.out.println();
 	}
 	
+	//PAUSES GAME FOR 1 SECOND
+	public void Sleep()
+	{
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//RETURNS TRUE IF INPUT IS VALID.
+	public boolean ValidateInput(int input)
+	{
+		if (input >= 0 && input < SIZE*3)
+		{
+			if (b.isEmpty(input))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	//READS INPUT FROM KEYBOARD
+	public void ReadInput()
+	{
+		System.out.print("Choose cell: ");
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		int input = scan.nextInt();
+		
+		if (ValidateInput(input-1))
+		{
+			b.updateCell(input-1);
+			return;
+		}
+		ReadInput();
+	}
+	
+	//SETS INPUT FROM PARAMETER
+	public void SetInput(int pos)
+	{
+		if (ValidateInput(pos))
+		{
+			b.updateCell(pos);
+		}
+	}
+	
+	//PRINTS BOARD TO CONSOLE
 	public void VisualPrintBoard()
 	{
 		for (int i = 0; i < SIZE; i++)
@@ -56,13 +105,14 @@ public class Console
 		PrintLines(SIZE);
 	}
 	
-	public void SinglePlayer()
+	//TWO PLAYER GAME
+	public void TwoPlayer()
 	{
-		int isOver = b.isOver();
+		isOver = b.isOver();
 		while (isOver == 0)
 		{
 			System.out.println("Current player is: " + b.mark);
-			readInput();
+			ReadInput();
 			VisualPrintBoard();
 			isOver = b.isOver();
 		}
@@ -70,7 +120,19 @@ public class Console
 		Winner(isOver);
 	}
 	
-	public void TwoPlayer()
+	//RANDOM INPUT SELECTION FOR COMPUTER
+    public int ComputerSelectGame()
+    {
+    	int select = rand.nextInt(9);
+		while ( !b.isEmpty(select) ) 
+		{
+			select = rand.nextInt(9);
+		}
+		return select;
+    }
+	
+	//COMPUTER PLAYER AND HUMAN PLAYER
+	public void SinglePlayer()
 	{		
 		int isOver = b.isOver();
 		
@@ -81,14 +143,14 @@ public class Console
 			if (game == 0)
 			{
 				System.out.println("Computers Turn" + " (" + b.mark + "):");
-				sleep();
-				MOCKreadInput(ComputerSelectGame());
+				Sleep();
+				SetInput(ComputerSelectGame());
 				VisualPrintBoard();
 			}
 			else
 			{
 				System.out.println("Your Turn" + " (" + b.mark + "):");
-				readInput();
+				ReadInput();
 				VisualPrintBoard();
 			}
 			isOver = b.isOver();
@@ -96,21 +158,12 @@ public class Console
 			game ^= 1;
 		}
 		Winner(isOver);
-		
 	}
 	
-	public void sleep()
-	{
-		try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	
+	//PRINTS TO CONSOLE WHO IS THE WINNER
 	public void Winner(int mark)
 	{
-		printGameOver();
+		PrintGameOver();
 
 		char win;
 		if (mark == 1)
@@ -128,17 +181,8 @@ public class Console
 		
 		System.out.println("Congratulations Player " + win + " YOU'RE WINNER!");
 	}
-	
-	public void readInput()
-	{
-		System.out.print("Choose cell: ");
-		@SuppressWarnings("resource")
-		Scanner scan = new Scanner(System.in);
-		int input = scan.nextInt();
-		
-		b.updateCell(input-1);
-	}
-	
+
+	//SELECTS AT RANDOM A PLAYER
 	public char SelectFirstPlayer()
     {
     	int select = rand.nextInt(2);    	
@@ -148,55 +192,39 @@ public class Console
     	}
     	return 'O';
     }
-	
-	//TEST CASE
-    public int GetIsOver()
-    {
-    	return IsOver;
-    }
+   
     
-    public int ComputerSelectGame()
-    {
-    	int select = rand.nextInt(9);
-		while ( !b.isEmpty(select) ) 
-		{
-			select = rand.nextInt(9);
-		}
-		return select;
-    }
-    
-    public static void main(String[] args) 
-    {
-		printWelcome();
+	  public static void main(String[] args) 
+	    {
+			PrintWelcome();
 
-		Console c = new Console();
-		
-		final char gameSetting = '-';
+			Console c = new Console();
+			
+			char gameSetting = '-';
 
-		//Full automation for Gradle
-		if (gameSetting == '-')
-		{
-			c.VisualPrintBoard();
-			c.MockTestPlay();	
+			//Full automation for Gradle
+			if (gameSetting == '-')
+			{
+				c.VisualPrintBoard();
+				c.MockTestPlay();	
+			}
+			
+			//single player mode
+			if (gameSetting == '+')
+			{
+				c.VisualPrintBoard();
+				c.SinglePlayer();
+			}
+			
+			//2-player mode
+			if (gameSetting == '/')
+			{
+				c.VisualPrintBoard();
+				c.TwoPlayer();
+			}
 		}
-		
-		//single player mode
-		if (gameSetting == '+')
-		{
-			c.VisualPrintBoard();
-			c.SinglePlayer();
-		}
-		
-		//2-player mode
-		if (gameSetting == '/')
-		{
-			c.VisualPrintBoard();
-			c.TwoPlayer();
-		}
-	}
     
     //MOCK FUNCTIONS:
-    
 	public void MockPrintBoard()
 	{
 		for (int i = 0; i < SIZE; i++)
@@ -205,7 +233,6 @@ public class Console
 			{
 				int pos = (SIZE * i+y) + 1;
 				char cell = b.cells[i][y];
-				//System.out.println(pos);
 				if (cell == '*')
 				{
 					System.out.print(pos + " ");
@@ -222,12 +249,12 @@ public class Console
 	
 	public void MockPlay()
 	{
-		MOCKreadInput(1);
-		MOCKreadInput(2);
-		MOCKreadInput(3);
+		SetInput(1);
+		SetInput(2);
+		SetInput(3);
 		for (int i = 0; i < 9; i++)
 		{
-			MOCKreadInput(i);
+			SetInput(i);
 		}
 		MockPrintBoard();
 	}
@@ -239,30 +266,23 @@ public class Console
    		while (isOver == 0)
 		{
 			System.out.println("Current player is: " + b.mark);
-			MOCKreadInput(ComputerSelectGame());
+			SetInput(ComputerSelectGame());
 			VisualPrintBoard();
 			isOver = b.isOver();
-			sleep();
+			Sleep();
 		}
 
 		Winner(isOver);
 	}
 	
-	public void MOCKreadInput(int pos)
-	{
-		b.updateCell(pos);
-	}
-	
+	//FOR TESTING PURPOSES ONLY
 	public String MockReadBoard()
 	{
 		return b.stringifyBoard();
 	}
 	
-    
-    
-    
 	//Awesome ascii art checking in.
-	private static void printWelcome() {
+	private static void PrintWelcome() {
 		System.out.println("  _____                                    _______ _______ _______ ");
 		System.out.println(" / ____|                                  |__   __|__   __|__   __|");
 		System.out.println("| (___  _   _ _ __   ___ _ __ __ _ _   _     | |     | |     | |   ");
@@ -274,7 +294,7 @@ public class Console
 		System.out.println("___________________________________________________________________\n");
 	}
 
-	private static void printGameOver() {
+	private static void PrintGameOver() {
 		System.out.println("  _____                       ____                 ");
 		System.out.println(" / ____|                     / __ \\                ");
 		System.out.println("| |  __  __ _ _ __ ___   ___| |  | |_   _____ _ __ ");
