@@ -75,6 +75,19 @@ public class Board {
         return 0;
     }
 
+    public int verticalWin() {
+        for(int col = 0; col < 3; col++) {
+            if(cells[0][col] != '*' && cells[0][col] == cells[1][col] && cells[1][col] == cells[2][col]) {
+                if(cells[0][col] == 'X')
+                    return 1;
+                else
+                    return 2;
+            }
+        }
+
+        return 0;
+    }
+
 
 
     public static void main(String[] args) {

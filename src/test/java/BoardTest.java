@@ -102,4 +102,20 @@ public class BoardTest
         board.updateCell(5, 'O');
         assertEquals(2, board.horizontalWin());
     }
+
+    @Test //7.0
+    public void testVerticalWinX() {
+        board.updateCell(1, 'X');
+        board.updateCell(4, 'X');
+        board.updateCell(7, 'X');
+        assertEquals(1, board.verticalWin());
+    }
+
+    @Test //7.1
+    public void testVerticalWinO() {
+        board.updateCell(2, 'O');
+        board.updateCell(5, 'O');
+        board.updateCell(8, 'O');
+        assertEquals(2, board.verticalWin());
+    }
 }
