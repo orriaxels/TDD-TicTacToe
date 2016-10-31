@@ -1,15 +1,19 @@
 $(function() {
-
+	var gameOver = false;
+	console.log("The game is: " + gameOver);
 	   
-
 });
+
 	$('.bGrid').click(function(){
-  		//ServiceCalls(this.id);
-  		var data = "*X*******2";
-		DrawBoard(data);
+		console.log("Tryin to click and game is: " + gameOver);
+		if(!gameOver){
+			ServiceCalls("/updateCell",this.id);
+		}
+  		
 	});
 
 	$('.newGame').click(function(){
+		gameOver = false;
 		ResetGame(this);
 
 	});
@@ -20,8 +24,9 @@ function ResetGame(disItem){
 		document.getElementById('sp'+i).innerHTML = "";
 	}
 	$('.GameBoard').css( "background-color", "#303E73" );
+	$('.GameBoard').css( "opacity", "1");
 	$('.bGrid').css( "display", "flex" );
-	ServiceCalls("/print");
+	ServiceCalls("/resetBoard");
 }
 
 function isGameOver(param){
@@ -46,13 +51,16 @@ function isGameOver(param){
 	    	isOver = true;
 	    	break;
 	}
+
 	if(isOver){
 		document.getElementById('GameState').innerHTML = message;
 		$('#GameState').css( "display", "block");
+		$('.GameBoard').css( "opacity", "0.5");
 		$('.newGame').css( "display", "block");
-		$('.newGame').css( "background-color", "rgba(255,255,255,0.5)");
+		$('.newGame').css( "background-color", "rgba(255,255,255,1)");
 
 	}
+
 	return isOver;
 }
 
@@ -64,7 +72,21 @@ function ServiceCalls(ServiceURL){
          url: ServiceURL,
          success: function (data) {
              console.log("Well that went well");
-             console.log(data.split(''));
+             DrawBoard(data);         
+         },
+         error: function () {
+             console.log("shit, i fkd up!");
+         }
+     });
+}
+
+function ServiceCalls(ServiceURL, param){
+	$.ajax({
+         type: "POST",
+         data: {"cellId":param},
+         url: ServiceURL,
+         success: function (data) {
+             console.log("Well that went well");
              DrawBoard(data);         
          },
          error: function () {
@@ -75,14 +97,14 @@ function ServiceCalls(ServiceURL){
 
 
 function DrawBoard(board){
-	for(i = 0; i < board.split('').length; i++){
+	for(i = 0; i < board.split('').length-1; i++){
 		var visability = $("#sp"+i).css('visibility');
-		if(visability == "hidden"){
+		if(visability == "hidden" && board.split('')[i] !="*"){
 			document.getElementById('sp'+i).innerHTML = board.split('')[i];
 			console.log("#sp"+i);
 			$("#sp"+i).css( "visibility", "visible");
 			$("#sp"+i).css( "opacity", "1" );
 		}	
 	}
-	var x = isGameOver(board.split('')[board.split('').length - 1]);
+	gameOver = isGameOver(board.split('')[board.split('').length - 1]);
 }
