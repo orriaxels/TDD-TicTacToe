@@ -1,5 +1,5 @@
 #!/bin/bash
-mv ../txt/README.pdf ../pdf/
-mv ../txt/Development_manual.pdf ../pdf/
-mv ../txt/Design_report.pdf ../pdf/
-mv ../txt/Administration_manual.pdf ../pdf/
+mv docs/txt/README.pdf docs/pdf/
+mv docs/txt/Development_manual.pdf docs/pdf/
+mv docs/txt/Design_report.pdf docs/pdf/
+mv docs/txt/Administration_manual.pdf docs/pdf/
